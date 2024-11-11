@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic,Editable Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Dynamic,Editable Resume Builder</h1>
+        <form id="form">
+    <!-- creating feild for career objective -->
+    <fieldset>
+        <legend>Career Objective</legend>
+        <label for="objective"> Career Objective:</label><br>
+        <textarea id="obective" placeholder="write down your objective" rows="6" cols="50"></textarea>
+    </fieldset>
+    
+        <!-- adding profile picture area -->
+         <fieldset>
+            <legend>Profile Picture</legend>
+        <label for="profilePicture">Upload Profile Picture:</label><br>
+        <input type="file" id="profilePicture" accept="image/*" onchange="previewProfilePicture(event)"><br><br>
+        <img id="profilePreview" alt="Profile Preview" /></fieldset>
+
+        <!-- creating field for personal information -->
+        <fieldset>
+            <legend>Personal information</legend>
+            <label for="name">Name:</label><br>
+            <input id="name" type="text" placeholder="Write your name" required ><br><br>
+            <label for="name">E-mail:</label><br>
+            <input id="E-mial" type="email" placeholder="Write your e-mail" required ><br><br>
+            <label for="phone">Phone:</label><br>
+            <input id="phone" type="tel" placeholder="Write your phone number" required ><br><br>
+        </fieldset>
+<!-- creating field for education -->
+        <fieldset>
+            <legend>Education</legend>
+            <label for="education">Education:</label><br>
+            <button id="edubutton" type="button" onclick="addEducationField()" >Add your Education</button><br><br>
+        </fieldset>
+        
+        </fieldset>
+
+        <!-- creating field for skilss -->
+        <fieldset>
+            <legend>Skills</legend>
+            <label for="skills">Skills:</label>
+            <button id="skillsbutton" type="button" onclick="addSkillsField()">Add your Skills</button><br><br>
+
+        </fieldset>
+        <fieldset>
+            <legend>Experience</legend>
+            <label for="experience">Experience:</label>
+            <button id="experiencebutton" type="button" onclick="addExperienceField()">Add your Experience</button><br><br>
+
+        </fieldset>
+
+        <!-- creating a field for experience -->
+        <!-- <fieldset>
+            <legend>Experience</legend>
+            <label for="experience" >Experience:</label><br>
+            <textarea id="experience" placeholder="write down your working experience" rows="5" cols="50"></textarea>
+
+        </fieldset> -->
+        <br>
+        <!-- creating a button to generate resume -->
+         <button><b><i>Generate Resume</i></b></button>
+    </form>
+    <br>
+    <!-- for making resume dynamic -->
+     <div id="generated-resume">
+     </div>
+
+         <!-- for making resume dynamic and editable -->
+         <div id="generated-resume" contenteditable="true">
+        </div>
+        <button id="download-pdf"><b>Download as PDF</b></button>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
